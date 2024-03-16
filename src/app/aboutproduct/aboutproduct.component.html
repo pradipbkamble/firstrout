@@ -1,0 +1,9 @@
+
+<p>product <strong>{{proobj.pname}} prductdetail {{proobj.pdetails}} {{proobj.pstatus}}
+ </strong></p>
+
+
+<!-- <button class="btn btn-primary" type="button" [routerLink]="['prodedt']">Edtproduct</button> -->
+<button class="btn btn-primary" type="button" (click)="gotoedt()">Edtproduct</button>
+<button class="btn btn-primary ml-3" [routerLink]="['/products/3']" 
+(click)="incompo()">on change</button>

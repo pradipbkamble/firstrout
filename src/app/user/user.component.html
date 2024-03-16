@@ -1,0 +1,21 @@
+<div class="text-right">
+    <button class="btn btn-success mb-4"[routerLink]="['adduser']">AddProduct</button>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <ul class="list-group" *ngIf="users; else nousers">
+            <li class="list-group-item"*ngFor="let user of users" [routerLink]="user.id" [ngClass]="{'active':useridnew===user.id}" (click)="onuser(user.id)">
+{{user.name}} {{user.run}}
+            </li>
+        </ul>
+        <ng-template #nousers>
+            <p class="alert alert-danger">
+                no users
+            </p>
+        </ng-template>
+        
+    </div>
+    <div class="col-md-6">
+        <router-outlet></router-outlet>
+    </div>
+</div>

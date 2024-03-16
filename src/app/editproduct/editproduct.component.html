@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <form  [formGroup]="formsub" (ngSubmit)="onsubmit()">
+                <div class="form-group">
+                    <label for="name"> name</label>
+                    <input type="text" class="form-control" formControlName="pname">
+                </div>
+                <div class="form-group">
+                    <label for="name">information</label>
+                    <input type="text" class="form-control" formControlName="pdetails">
+                </div>
+                <div class="form-group">
+                    <!-- <label for="name">status</label>
+                    <input type="text" class="form-control" formControlName="pstatus"> -->
+                    <select name="status" formControlName="pstatus" class="form-control" id="status">
+                        <option value="inprocess">inprocess</option>
+                        <option value="dispatch">dispatch</option>
+                        <option value="deliver">deliver</option>
+                    </select>
+                </div>
+                
+                <button class="btn btn-primary" *ngIf="showbtn" (click)="onupdate()" type="button">update</button>
+                <button class="btn btn-primary"*ngIf="!showbtn" type="submit">add</button>
+                
+            </form>
+        </div>
+    </div>
+</div>

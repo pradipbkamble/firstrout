@@ -1,0 +1,29 @@
+<div class="row my-3 my-md-0">
+    <div class="col-md-6 offset-md-3">
+        <div class="card">
+            <div class="card-header">
+                <form [formGroup]="userform" (ngSubmit)="onsubmit()">
+                    <div class="form-group">
+                        <label for="name">name</label>
+                    <input type="text" class="form-control" formControlName="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="run">runs</label>
+                    <input type="text" class="form-control" formControlName="run">
+                    </div>
+                    
+                    
+                    <button class="btn btn-primary" type="button" *ngIf="isuserupdate" (click)="onupdate()">OnUpdate</button>
+                    
+                    <button class="btn btn-info" type="submit" *ngIf="!isuserupdate">OnSubmit</button>
+
+                </form>
+            </div>
+            <div>
+                <ng-template>
+        <p class="alert alert-info"> invalid</p>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>

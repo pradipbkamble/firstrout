@@ -1,0 +1,32 @@
+<div class="text-right">
+    <button class="btn btn-success mb-4"[routerLink]="['productadd']" (click)="onadd()">AddProduct</button>
+</div>
+<div class="row my-5">
+    <div class="col-md-6">
+        <ul class="list-group" *ngIf="prodid;else noproid">
+            <li  class="list-group-item" *ngFor="let pro of prodid" [routerLink]="pro.id"
+             (click)="getproid(pro.id)" [ngClass]="{'active':selectedid===pro.id}">
+                {{pro.pname}} <strong>{{pro.pstatus}}</strong>
+            </li>
+        </ul>
+        <ng-template #noproid>
+            <p class="alert alert-info">noid</p>
+        </ng-template>
+    </div>
+    <div class="col-md-6">
+        <router-outlet></router-outlet>
+    </div>
+    
+    <div class="col-md-6 offset-md-3 my-5">
+<!-- <button class="btn btn-primary" routerLink="/users">userss</button> -->
+<button class="btn btn-primary" (click)="userrout()">users</button> 
+    </div>
+</div>
+
+
+
+
+
+
+
+
